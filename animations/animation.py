@@ -52,6 +52,9 @@ class Animation(object):
     def set_fractal(self, new_fractal):
         self.fractal = new_fractal
 
+    def set_directory(self, new_directory):
+        self.directory = new_directory
+
     def set_filename(self, new_filename):
         self.filename = new_filename
 
@@ -68,7 +71,10 @@ class Animation(object):
         raise NotImplemented
 
     def preprocess(self):
-        self.fractal.directory = self.animation_name
+        if self.directory:
+            self.fractal.directory = self.directory
+        else:
+            self.fractal.directory = self.animation_name
         if not self.fractal.preprocessed:
             self.fractal.preprocess()
 

@@ -25,7 +25,7 @@ class RandomPhoenixJulia(Animation):
         self.fractal.set_height(fractal_backup.height)
 
         calc_pbar = ProgressBar(maxval=self.increments)
-        print("Generating Cubic Mandelbrot Set")
+        print("Generating Phoenix Mandelbrot Set")
         self.fractal.set_bypass_image_generation(True)
         self.render_fractal()
 

@@ -1,0 +1,41 @@
+notes on possible schema file implementation in the future
+python generate_fractal_image.py -f scheme.scm
+
+{
+    'type': (image|gif|video),
+    'height': <int>,
+    'width': <int>,
+    'fractal':
+        {
+            'algorithm': <fractal algorithm>,
+            'precision': <int>,
+            'real_constant': <float>,
+            'imaginary_constant': <float>,
+            'viewport_left': <float>,
+            'viewport_right': <float>,
+            'viewport_top': <float>,
+            'viewport_bottom': <float>,
+        }
+    'animation':
+        {
+            'frames': <int>,
+            'end_frame_values':
+                {
+                    'real_constant': <float>,
+                    'imaginary_constant': <float>,
+                    'viewport_left': <float>,
+                    'viewport_right': <float>,
+                    'viewport_top': <float>,
+                    'viewport_bottom': <float>,
+                }
+        },
+    'coloring':
+        {
+            'algorithm': (hue_cyclic|hue_range|hue_cycle|second_hue_rotation|first_hue_rotation),
+            'hue_start_degree': <int>,
+            'hue_step_shift': <int>,
+            'hue_end_degree': <int>,
+            'color_count': <int>
+        }
+}
+
